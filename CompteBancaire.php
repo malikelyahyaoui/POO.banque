@@ -11,7 +11,6 @@ class CompteBancaire{
         $this-> solde = $solde;
         $this-> devise = $devise;
         $this-> titulaire = $titulaire;
-
         $titulaire->ajouterCompte($this);   
     }
     
