@@ -11,6 +11,7 @@ class CompteBancaire{
         $this-> solde = $solde;
         $this-> devise = $devise;
         $this-> titulaire = $titulaire;
+
         $titulaire->ajouterCompte($this);   
     }
     
@@ -50,7 +51,7 @@ class CompteBancaire{
         return $this;
     }
 
-    public function getTitulaire(): Titulaire
+    public function getTitulaire()
     {
         return $this->titulaire;
     }
@@ -62,7 +63,22 @@ class CompteBancaire{
         return $this;
     }
 
-   
+    public function crediter(float $montant){
+        if($montant > 0) {
+            $this -> solde += $montant;
+        } 
+    }
+
+    public function debiter(float $montant){
+        if($montant > 0) {
+            $this -> solde -= $montant;
+        } 
+    }
+    
+    public function virement(CompteBancaire $compteDestinataire, float $montant){
+        $this-> debiter($montant);
+        $compteDestinataire -> crediter($montant);
+    }
 
     public function __toString(): string {
          return "{$this->libelle} (Solde : {$this->solde} {$this->devise})";
