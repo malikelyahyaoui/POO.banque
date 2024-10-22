@@ -81,22 +81,6 @@ class Titulaire{
         return $this;
     }
 
-    public function ajouterCompte(CompteBancaire $compte){
-        $this -> comptes[]= $compte;
-        }
-
-    public function afficherInformations(): string {
-            $age = (new DateTime())->diff($this->dateNaissance)->y;
-            $infos = "Informations du titulaire :<br>";
-            $infos .= "Nom : {$this->nom}<br>";
-            $infos .= "Prénom : {$this->prenom}<br>";
-            $infos .= "Date de naissance : {$this->dateNaissance->format('d/m/Y')} (âge : {$age} ans)<br>";
-            $infos .= "Ville : {$this->ville}<br>";
-            $infos .= "Comptes :<br>";
-            foreach ($this->comptes as $compte) {
-                $infos .= "- {$compte}<br>";
-            }
-            return $infos;
-        }
+   
 
  }
