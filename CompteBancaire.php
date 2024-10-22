@@ -63,26 +63,8 @@ class CompteBancaire{
         return $this;
     }
 
-    public function crediter(float $montant){
-        if($montant > 0) {
-            $this -> solde += $montant;
-        } else {
-            echo "Le montant doit être positif !<br>";
-        }
-    }
-
-    public function debiter(float $montant){
-        if($montant > 0) {
-            $this -> solde -= $montant;
-        } else {
-            echo "Le montant doit être positif !<br>";
-        }
-    }
+  
     
-    public function virement(CompteBancaire $compteDestinataire, float $montant){
-        $this-> debiter($montant);
-        $compteDestinataire -> crediter($montant);
-    }
 
     public function __toString(): string {
          return "{$this->libelle} (Solde : {$this->solde} {$this->devise})";
