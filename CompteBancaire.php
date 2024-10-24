@@ -1,4 +1,4 @@
-<?ph
+<?php
 
 class CompteBancaire{
     private string $libelle;
