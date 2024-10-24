@@ -14,17 +14,17 @@ echo $t1->afficherInformations();
 echo $t2->afficherInformations();
 
 echo "{$c1} avant crédit : Solde initial {$c1->getSolde()} {$c1->getDevise()}<br>";
-$c1->crediter(2000);
+$c1->crediter(100);
 echo "{$c1} après crédit : Solde initial {$c1->getSolde()} {$c1->getDevise()}<br>";
 echo "{$c1} avant débit : Solde initial {$c1->getSolde()} {$c1->getDevise()}<br>";
-$c1->debiter(1000);
+$c1->debiter(200);
 echo "{$c1} après débit : Solde initial {$c1->getSolde()} {$c1->getDevise()}<br>";
 
 echo "Avant le virement :<br>";
 echo "$c1: Solde initial {$c1->getSolde()} {$c1->getDevise()}<br>";
 echo "$c2: Solde initial {$c2->getSolde()} {$c2->getDevise()}<br>";
 
-$c1->virement($c2, 1000);
+$c1->virement($c2, 100 );
 
 echo "Après le virement :<br>";
 echo "$c1: Solde initial {$c1->getSolde()} {$c1->getDevise()}<br>";
