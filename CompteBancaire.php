@@ -11,7 +11,7 @@ class CompteBancaire{
         $this-> solde = $solde;
         $this-> devise = $devise;
         $this-> titulaire = $titulaire;
-
+ // ajouter les comptes au titulaire
         $titulaire->ajouterCompte($this);   
     }
     
@@ -62,13 +62,13 @@ class CompteBancaire{
 
         return $this;
     }
-
+// ajouter une somme a tel compte
     public function crediter(float $montant){
         if($montant > 0) {
             $this -> solde += $montant;
         } 
     }
-
+// debiter une certaine somme de tel compte
     public function debiter(float $montant){
         if($montant > 0) {
             $this -> solde -= $montant;
